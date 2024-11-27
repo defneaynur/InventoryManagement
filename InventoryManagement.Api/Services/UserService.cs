@@ -17,7 +17,7 @@ namespace InventoryManagement.Api.Services;
 public class UserService(IUserProcessors _usersProcessors, IConfigProject _configProject) : ControllerBase
 {
     [HttpGet]
-    public async Task<CoreResponse<IEnumerable<Users>>> GetUsers()
+    public async Task<CoreResponse<IEnumerable<Users>>> GetUsers() 
     {
         var result = await _usersProcessors.GetUsersAsync();
         if (!result.Any())
