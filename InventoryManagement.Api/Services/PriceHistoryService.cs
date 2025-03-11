@@ -26,7 +26,7 @@ public class PriceHistoryService : ControllerBase
             return new CoreResponse<IEnumerable<PriceHistoryResponse>>
             {
                 Data = null,
-                CoreResponseCode = CoreResponseCode.NoData,
+                ResponseCode = ResponseCode.NoData,
                 ErrorMessages = new List<string>(),
                 Message = "Aradığınız kriterlerde data bulunamadı."
             };
@@ -35,7 +35,7 @@ public class PriceHistoryService : ControllerBase
         return new CoreResponse<IEnumerable<PriceHistoryResponse>>
         {
             Data = result,
-            CoreResponseCode = CoreResponseCode.Success,
+            ResponseCode = ResponseCode.Success,
             ErrorMessages = new List<string>(),
             Message = ""
         };
@@ -50,7 +50,7 @@ public class PriceHistoryService : ControllerBase
             return new CoreResponse<IEnumerable<PriceHistoryResponse>>
             {
                 Data = null,
-                CoreResponseCode = CoreResponseCode.NoData,
+                ResponseCode = ResponseCode.NoData,
                 ErrorMessages = new List<string>(),
                 Message = "Aradığınız kriterlerde data bulunamadı."
             };
@@ -59,7 +59,7 @@ public class PriceHistoryService : ControllerBase
         return new CoreResponse<IEnumerable<PriceHistoryResponse>>
         {
             Data = result,
-            CoreResponseCode = CoreResponseCode.Success,
+            ResponseCode = ResponseCode.Success,
             ErrorMessages = new List<string>(),
             Message = ""
         };

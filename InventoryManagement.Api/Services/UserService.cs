@@ -25,7 +25,7 @@ public class UserService(IUserProcessors _usersProcessors, IConfigProject _confi
             return new CoreResponse<IEnumerable<Users>>
             {
                 Data = null,
-                CoreResponseCode = CoreResponseCode.NoData,
+                ResponseCode = ResponseCode.NoData,
                 ErrorMessages = new List<string>(),
                 Message = "Aradığınız kriterlerde data bulunamadı."
             };
@@ -34,7 +34,7 @@ public class UserService(IUserProcessors _usersProcessors, IConfigProject _confi
         return new CoreResponse<IEnumerable<Users>>
         {
             Data = result,
-            CoreResponseCode = CoreResponseCode.Success,
+            ResponseCode = ResponseCode.Success,
             ErrorMessages = new List<string>(),
             Message = ""
         };
@@ -50,7 +50,7 @@ public class UserService(IUserProcessors _usersProcessors, IConfigProject _confi
         return new CoreResponse<Users>
         {
             Data = result,
-            CoreResponseCode = CoreResponseCode.Success,
+            ResponseCode = ResponseCode.Success,
             ErrorMessages = new List<string>(),
             Message = "Kullanıcı başarıyla oluşturuldu."
         };
@@ -67,7 +67,7 @@ public class UserService(IUserProcessors _usersProcessors, IConfigProject _confi
         return new CoreResponse<Users>
         {
             Data = result.Result,
-            CoreResponseCode = CoreResponseCode.Success,
+            ResponseCode = ResponseCode.Success,
             ErrorMessages = new List<string>(),
             Message = "Ürün başarıyla güncellendi."
         };
@@ -83,7 +83,7 @@ public class UserService(IUserProcessors _usersProcessors, IConfigProject _confi
         return new CoreResponse<bool>
         {
             Data = result,
-            CoreResponseCode = CoreResponseCode.Success,
+            ResponseCode = ResponseCode.Success,
             ErrorMessages = new List<string>(),
             Message = "Ürün başarıyla silindi."
         };
@@ -98,7 +98,7 @@ public class UserService(IUserProcessors _usersProcessors, IConfigProject _confi
             return new CoreResponse<string>
             {
                 Data = null,
-                CoreResponseCode = CoreResponseCode.Unauthorized,
+                ResponseCode = ResponseCode.Unauthorized,
                 ErrorMessages = new List<string> { "Geçersiz kullanıcı adı veya şifre." },
                 Message = "Giriş başarısız."
             };
@@ -108,7 +108,7 @@ public class UserService(IUserProcessors _usersProcessors, IConfigProject _confi
         return new CoreResponse<string>
         {
             Data = token,
-            CoreResponseCode = CoreResponseCode.Success,
+            ResponseCode = ResponseCode.Success,
             ErrorMessages = new List<string>(),
             Message = "Giriş başarılı."
         };

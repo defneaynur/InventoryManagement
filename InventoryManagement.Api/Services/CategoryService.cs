@@ -27,7 +27,7 @@ namespace InventoryManagement.Api.Services
                 return new CoreResponse<IEnumerable<Categories>>
                 {
                     Data = null,
-                    CoreResponseCode = CoreResponseCode.NoData,
+                    ResponseCode = ResponseCode.NoData,
                     ErrorMessages = new List<string>(),
                     Message = "Aradığınız kriterlerde data bulunamadı."
                 };
@@ -36,7 +36,7 @@ namespace InventoryManagement.Api.Services
             return new CoreResponse<IEnumerable<Categories>>
             {
                 Data = result,
-                CoreResponseCode = CoreResponseCode.Success,
+                ResponseCode = ResponseCode.Success,
                 ErrorMessages = new List<string>(),
                 Message = ""
             };
@@ -53,7 +53,7 @@ namespace InventoryManagement.Api.Services
             return new CoreResponse<Categories>
             {
                 Data = result,
-                CoreResponseCode = CoreResponseCode.Success,
+                ResponseCode = ResponseCode.Success,
                 ErrorMessages = new List<string>(),
                 Message = ""
             };
@@ -70,7 +70,7 @@ namespace InventoryManagement.Api.Services
             return new CoreResponse<Categories>
             {
                 Data = result,
-                CoreResponseCode = CoreResponseCode.Success,
+                ResponseCode = ResponseCode.Success,
                 ErrorMessages = new List<string>(),
                 Message = "Ürün başarıyla güncellendi."
             };
@@ -86,7 +86,7 @@ namespace InventoryManagement.Api.Services
             return new CoreResponse<bool>
             {
                 Data = result,
-                CoreResponseCode = CoreResponseCode.Success,
+                ResponseCode = ResponseCode.Success,
                 ErrorMessages = new List<string>(),
                 Message = "Ürün başarıyla silindi."
             };
@@ -101,7 +101,7 @@ namespace InventoryManagement.Api.Services
             return new CoreResponse<Categories>
             {
                 Data = result,
-                CoreResponseCode = CoreResponseCode.Success,
+                ResponseCode = ResponseCode.Success,
                 ErrorMessages = new List<string>(),
                 Message = ""
             };

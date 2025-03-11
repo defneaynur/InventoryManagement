@@ -29,7 +29,7 @@ public class ProductService : ControllerBase
             return new CoreResponse<IEnumerable<ProductResponse>>
             {
                 Data = null,
-                CoreResponseCode = CoreResponseCode.NoData,
+                ResponseCode = ResponseCode.NoData,
                 ErrorMessages = new List<string>(),
                 Message = "Aradığınız kriterlerde data bulunamadı."
             };
@@ -38,7 +38,7 @@ public class ProductService : ControllerBase
         return new CoreResponse<IEnumerable<ProductResponse>>
         {
             Data = result,
-            CoreResponseCode = CoreResponseCode.Success,
+            ResponseCode = ResponseCode.Success,
             ErrorMessages = new List<string>(),
             Message = ""
         };
@@ -54,7 +54,7 @@ public class ProductService : ControllerBase
         return new CoreResponse<Products>
         {
             Data = result,
-            CoreResponseCode = CoreResponseCode.Success,
+            ResponseCode = ResponseCode.Success,
             ErrorMessages = new List<string>(),
             Message = ""
         };
@@ -71,7 +71,7 @@ public class ProductService : ControllerBase
         return new CoreResponse<Products>
         {
             Data = result,
-            CoreResponseCode = CoreResponseCode.Success,
+            ResponseCode = ResponseCode.Success,
             ErrorMessages = new List<string>(),
             Message = "Ürün başarıyla güncellendi."
         };
@@ -86,7 +86,7 @@ public class ProductService : ControllerBase
         return new CoreResponse<bool>
         {
             Data = result,
-            CoreResponseCode = CoreResponseCode.Success,
+            ResponseCode = ResponseCode.Success,
             ErrorMessages = new List<string>(),
             Message = "Ürün başarıyla güncellendi."
         };

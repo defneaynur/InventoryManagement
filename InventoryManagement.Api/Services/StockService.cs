@@ -30,7 +30,7 @@ public class StockService : ControllerBase
         return new CoreResponse<Products>
         {
             Data = result,
-            CoreResponseCode = CoreResponseCode.Success,
+            ResponseCode = ResponseCode.Success,
             ErrorMessages = new List<string>(),
             Message = "Stok başarıyla güncellendi."
         };
@@ -46,7 +46,7 @@ public class StockService : ControllerBase
             return new CoreResponse<IEnumerable<StockMovementsResponse>>
             {
                 Data = null,
-                CoreResponseCode = CoreResponseCode.NoData,
+                ResponseCode = ResponseCode.NoData,
                 ErrorMessages = new List<string>(),
                 Message = "Aradığınız kriterlerde data bulunamadı."
             };
@@ -55,7 +55,7 @@ public class StockService : ControllerBase
         return new CoreResponse<IEnumerable<StockMovementsResponse>>
         {
             Data = result,
-            CoreResponseCode = CoreResponseCode.Success,
+            ResponseCode = ResponseCode.Success,
             ErrorMessages = new List<string>(),
             Message = ""
         };

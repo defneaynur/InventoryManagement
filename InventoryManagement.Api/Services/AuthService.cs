@@ -2,6 +2,7 @@
 using InventoryManagement.Domain.Models.RequestModel;
 using Microsoft.AspNetCore.Mvc;
 using Moonlight.Response.Response;
+using Serilog;
 
 [Route("api/[controller]")]
 [ApiController]
@@ -19,6 +20,9 @@ public class AuthService : ControllerBase
     [HttpPost("tokenVerify")]
     public CoreResponse<bool> VerifyToken(ValidateRequest validate)
     {
+        var methodName = nameof(VerifyToken);
+        //Log.Information("Metod: {Method} - Token doğrulama başlatıldı. Token: {Token}", methodName, validate.Token);
+
         if (validate.Token.StartsWith("Bearer "))
             validate.Token = validate.Token.Substring(7);
 
@@ -26,23 +30,26 @@ public class AuthService : ControllerBase
 
         if (isValid)
         {
+            //Log.Information("Metod: {Method} - Token geçerli. Token: {Token}", methodName, validate.Token);
             return new CoreResponse<bool>
             {
                 Data = true,
-                CoreResponseCode = CoreResponseCode.Success,
+                ResponseCode = ResponseCode.Success,
                 Message = "Token geçerli.",
                 ErrorMessages = new List<string>()
             };
         }
         else
         {
+            //Log.Warning("Metod: {Method} - Geçersiz token. Token: {Token}", methodName, validate.Token);
             return new CoreResponse<bool>
             {
                 Data = false,
-                CoreResponseCode = CoreResponseCode.InvalidToken,
+                ResponseCode = ResponseCode.InvalidToken,
                 Message = "Token geçerli değil.",
                 ErrorMessages = new List<string> { "Geçersiz veya süresi dolmuş token." }
             };
         }
     }
+
 }

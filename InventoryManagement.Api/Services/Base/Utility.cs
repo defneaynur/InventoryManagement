@@ -12,12 +12,11 @@ namespace InventoryManagement.Api.Services.Base
                 var bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
 
                 var builder = new StringBuilder();
-                Parallel.ForEach(bytes, b => builder.Append(b.ToString("x2")));
-               
-                //foreach (var b in bytes)
-                //{
-                //    builder.Append(b.ToString("x2")); 
-                //}
+
+                foreach (var b in bytes)
+                {
+                    builder.Append(b.ToString("x2"));
+                }
                 return builder.ToString();
             }
         }

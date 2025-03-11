@@ -1,7 +1,8 @@
 ﻿using Core.Config.Config.Model;
-using Core.Config.Injection;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
+using Serilog;
+using Serilog.Sinks.Elasticsearch;
 using System.Text;
 
 namespace InventoryManagement.Api.Base
@@ -38,6 +39,15 @@ namespace InventoryManagement.Api.Base
                         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings.Key))
                     };
                 });
+
+            Log.Logger = new LoggerConfiguration()
+                        .WriteTo.Elasticsearch(new ElasticsearchSinkOptions(new Uri("http://localhost:9200"))
+                        {
+                            AutoRegisterTemplate = true
+                        })
+                        .CreateLogger();
+
+
 
         }
     }

@@ -1,4 +1,5 @@
 ﻿using InventoryManagement.Api.Base;
+using InventoryManagement.Api.Services.Middleware;
 using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -22,6 +23,7 @@ builder.BaseConfigure();
 
 
 var app = builder.Build();
+app.UseMiddleware<LoggingMiddleware>();
 
 if (!app.Environment.IsDevelopment())
 {
